@@ -5,7 +5,7 @@ const JUMP_VELOCITY = -400.0
 @export var initial_velocity := Vector2(0, 0)
 var collision_count := 0
 
-#@onready var player = $"."
+@onready var player = $"."
 @onready var world = $".."
 @onready var tile_map: TileMap = $"../TileMap"
 @onready var label: Label = $"../HUD/Label"
@@ -43,9 +43,9 @@ func get_input():
 			$"/root/World".save_game()
 			print("saved")
 		elif Input.is_action_just_released("Load"):
-			print("loading")
+			print("loading from Input.is_action_just_released(Load)")
 			$"/root/World".load_game()
-			print("loaded")
+			print("load attempt complete from Input.is_action_just_released(Load)")
 			
 		else:
 			if($Sprite2D/AnimatedSprite2D):

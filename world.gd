@@ -1,22 +1,9 @@
 extends Node
 
-var count = 0
 const Global = preload("res://Global.gd")
+const myplayer = preload("res://Player.gd")
 @onready var sprite_2d: Sprite2D = $Player/Sprite2D
 @onready var player : CharacterBody2D = $Player
-
-const myplayer = preload("res://Player.gd")
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	print("starting world")
-	#$"/root/Global".sayhello()
-	if not (player):
-		print("there is no player in world ready")
-	else:
-		print("in world, player.global_position in _ready func "+str(player.global_position))
-		#player.position.x = 0 #this works, player moves
-		load_game()
 
 func load_game():
 	print("starting load_game")
@@ -52,11 +39,8 @@ func load_game():
 	
 		
 		#print( "this loading x is "+ str( Vector2(node_data["position"]) ) )
-		print("/home/user/.local/share/GodotFarmingGameSave/")
+		#print("/home/user/.local/share/GodotFarmingGameSave/")
 		
-		#lets true to update the player position from the save file
-		if (player):
-			print("there is no player")
 			
 		
 func _on_timer_timeout():
@@ -83,13 +67,14 @@ func save_game():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	#var tileBelow = tile_map.local_to_map(player.position)
-	if Input.is_action_just_released("Save"):
-		print("saved detected in world func _process")
-		if(player):
-			print("there IS a player in world func _process")
-		else:
-			print("there is not player in world func _process")
-		
 	pass
 
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	print("starting world")
+	#$"/root/Global".sayhello()
+	if not (player):
+		print("there is no player in world ready")
+	else:
+		print("in world, player.global_position in _ready func "+str(player.global_position))
+		#player.position.x = 0 #this works, player moves

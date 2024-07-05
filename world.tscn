@@ -139,8 +139,6 @@ layer_0/tile_data = PackedInt32Array(0, 65536, 7, 65537, 786432, 5, 65538, 78643
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(100, 100)
 script = ExtResource("2_2vy1d")
-speed = null
-initial_velocity = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 visible = false
