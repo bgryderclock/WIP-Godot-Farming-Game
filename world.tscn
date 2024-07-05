@@ -1,0 +1,176 @@
+[gd_scene load_steps=19 format=3 uid="uid://c4dic35qwua6b"]
+
+[ext_resource type="Script" path="res://world.gd" id="1_tbqi5"]
+[ext_resource type="Script" path="res://Player.gd" id="2_2vy1d"]
+[ext_resource type="Texture2D" uid="uid://b0nc5xlnsd08u" path="res://Art/duckfarmingTilesheetComplete.webp" id="3_ne527"]
+[ext_resource type="PackedScene" uid="uid://ckmqomcr83kk8" path="res://tile_map.tscn" id="4_ognc6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ao8lg"]
+radius = 5.25
+height = 14.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qv3k"]
+atlas = ExtResource("3_ne527")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h60vl"]
+atlas = ExtResource("3_ne527")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vg20"]
+atlas = ExtResource("3_ne527")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8yei"]
+atlas = ExtResource("3_ne527")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgp2p"]
+atlas = ExtResource("3_ne527")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyhfc"]
+atlas = ExtResource("3_ne527")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnwbr"]
+atlas = ExtResource("3_ne527")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7coi2"]
+atlas = ExtResource("3_ne527")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0ytp"]
+atlas = ExtResource("3_ne527")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6kw8"]
+atlas = ExtResource("3_ne527")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvcwj"]
+atlas = ExtResource("3_ne527")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dub02"]
+atlas = ExtResource("3_ne527")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b6urh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qv3k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h60vl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vg20")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8yei")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tgp2p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyhfc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hnwbr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7coi2")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tgp2p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyhfc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hnwbr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7coi2")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0ytp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6kw8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvcwj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dub02")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 5.0
+}]
+
+[node name="World" type="Node"]
+script = ExtResource("1_tbqi5")
+
+[node name="TileMap" parent="." instance=ExtResource("4_ognc6")]
+z_index = -1
+rendering_quadrant_size = 128
+layer_0/tile_data = PackedInt32Array(0, 65536, 7, 65537, 786432, 5, 65538, 786432, 5, 131074, 786432, 5, 131075, 786432, 5, 131076, 196608, 6, 196612, 196608, 7, 327688, 262144, 8, 327687, 262144, 8, 327686, 262144, 8, 1, 65536, 7, 2, 65536, 7, 3, 65536, 7, 4, 65536, 7, 5, 65536, 7, 6, 65536, 7, 7, 65536, 7, 65540, 786432, 5, 65539, 786432, 5, 65541, 786432, 5, 65542, 786432, 5, 65543, 786432, 5, 65544, 786432, 5, 65545, 786432, 5, 65546, 786432, 5, 131077, 262144, 6, 131078, 262144, 6, 131079, 262144, 6, 131080, 262144, 6, 131081, 327680, 6, 131082, 65536, 7, 131083, 65536, 7, 196617, 327680, 7, 196618, 786432, 5, 196619, 65536, 7, 262154, 786432, 5, 262153, 327680, 7, 262155, 786432, 5, 327691, 786432, 5, 327690, 786432, 5, 327689, 327680, 8, 65536, 786432, 5, 131072, 786432, 5, 196608, 65536, 7, 262144, 65536, 7, 327680, 65536, 7, 327681, 65536, 7, 327682, 65536, 7, 327683, 65536, 7, 327684, 196608, 8, 327685, 262144, 8, 262148, 196608, 7, 262147, 786432, 5, 262146, 65536, 7, 262145, 65536, 7, 196609, 786432, 5, 196610, 786432, 5, 196611, 786432, 5, 131073, 786432, 5, 8, 65536, 7, 9, 65536, 7, 10, 65536, 7, 11, 65536, 7, 65547, 65536, 7, 12, 65536, 7, 65548, 65536, 7, 131084, 65536, 7, 196620, 65536, 7, 262156, 65536, 7, 327692, 65536, 7, 13, 65536, 7, 65549, 65536, 7, 131085, 65536, 7, 196621, 65536, 7, 262157, 65536, 7, 327693, 65536, 7, 393229, 786432, 5, 393228, 786432, 5, 393227, 786432, 5, 393226, 786432, 5, 393225, 65536, 7, 393224, 65536, 7, 393223, 65536, 7, 393222, 65536, 7, 393221, 65536, 7, 393220, 65536, 7, 393219, 65536, 7, 393218, 65536, 7, 393217, 65536, 7, 393216, 65536, 7, 196622, 65536, 7, 196623, 65536, 7, 14, 65536, 7, 131086, 65536, 7, 262158, 65536, 7, 327694, 65536, 7, 393230, 65536, 7, 393231, 65536, 7, 327695, 65536, 7, 262159, 65536, 7, 131087, 65536, 7, 65551, 65536, 7, 15, 65536, 7, 65550, 65536, 7, 458767, 65536, 7, 524303, 65536, 7, 524302, 65536, 7, 524301, 65536, 7, 524300, 65536, 7, 524299, 65536, 7, 524298, 65536, 7, 524297, 65536, 7, 524296, 786432, 5, 524295, 786432, 5, 524294, 786432, 5, 524293, 786432, 5, 524292, 786432, 5, 524291, 786432, 5, 524290, 786432, 5, 524289, 65536, 7, 524288, 65536, 7, 458754, 786432, 5, 458755, 786432, 5, 458756, 786432, 5, 458757, 786432, 5, 458758, 65536, 7, 458759, 65536, 7, 458760, 65536, 7, 458761, 65536, 7, 458762, 65536, 7, 458763, 65536, 7, 458764, 65536, 7, 458765, 65536, 7, 458766, 65536, 7, 458753, 65536, 7, 458752, 65536, 7, 589824, 65536, 7, 589825, 786432, 5, 589826, 786432, 5, 589827, 786432, 5, 589828, 786432, 5, 589829, 786432, 5, 589830, 786432, 5, 589831, 786432, 5, 589832, 786432, 5, 589833, 786432, 5, 589834, 65536, 7, 589835, 65536, 7, 589836, 65536, 7, 589837, 65536, 7, 589838, 65536, 7, 589839, 65536, 7, 720911, 65536, 7, 720910, 65536, 7, 655373, 65536, 7, 655372, 65536, 7, 655371, 65536, 7, 655370, 65536, 7, 655369, 65536, 7, 655368, 65536, 7, 655367, 65536, 7, 655366, 65536, 7, 655365, 65536, 7, 655364, 65536, 7, 655363, 65536, 7, 655362, 65536, 7, 655361, 65536, 7, 655360, 65536, 7, 720896, 65536, 7, 720897, 65536, 7, 720898, 65536, 7, 720899, 65536, 7, 720900, 65536, 7, 720901, 65536, 7, 720902, 65536, 7, 720903, 65536, 7, 720904, 65536, 7, 720905, 65536, 7, 720906, 65536, 7, 720907, 65536, 7, 720908, 65536, 7, 655374, 65536, 7, 655375, 65536, 7, 720909, 65536, 7, 196613, 262144, 7, 196614, 262144, 7, 196615, 262144, 7, 196616, 262144, 7, 262149, 262144, 7, 262150, 262144, 7, 262151, 262144, 7, 262152, 262144, 7)
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(100, 100)
+script = ExtResource("2_2vy1d")
+speed = null
+initial_velocity = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+visible = false
+light_mask = 1048575
+visibility_layer = 1048575
+position = Vector2(0, -2)
+shape = SubResource("CapsuleShape2D_ao8lg")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+hframes = 13
+vframes = 13
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player/Sprite2D"]
+sprite_frames = SubResource("SpriteFrames_b6urh")
+animation = &"walk_up"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 7.0
+autostart = true
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="HUD"]
+offset_left = 43.0
+offset_top = 16.0
+offset_right = 322.0
+offset_bottom = 56.0
+scale = Vector2(0.380901, 0.451174)
+theme_override_font_sizes/font_size = 29
+text = "label text
+"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
