@@ -1,1 +1,1 @@
-Thanks for reading me :D
+working walk and door functionality
